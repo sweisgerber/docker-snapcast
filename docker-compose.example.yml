@@ -1,0 +1,21 @@
+version: "3"
+services:
+  snapcast:
+    image: docker.io/sweisgerber/snapserver:latest
+    hostname: snapcast
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+    restart: "unless-stopped"
+    ports:
+      - 1704:1704
+      - 1705:1705
+      - 1780:1780
+      # devices:
+      # - /dev/snd:/dev/snd # optional
+    volumes:
+      - /<path>/<to>/<snapserver>/config/:/config/
+      - /<path>/<to>/<snapserver>/data/:/data/
+      # /audio should get used to place FIFOs for audio playback from mpd/mopidy/host/etc
+      - /<path>/<to>/audio-fifos/:/audio/
