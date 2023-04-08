@@ -1,0 +1,16 @@
+#!/usr/bin/with-contenv bash
+
+# create directories
+mkdir -p \
+    /config \
+    /data \
+    /audio
+
+# copy config unless it exists
+cp -n /defaults/snapserver.conf /config/snapserver.conf
+
+# permissions
+lsiown -R abc:abc \
+    /config \
+    /data \
+    /audio
