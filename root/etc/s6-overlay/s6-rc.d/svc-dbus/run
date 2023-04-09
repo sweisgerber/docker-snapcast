@@ -1,4 +1,4 @@
 #!/usr/bin/with-contenv bash
 
 exec \
-  s6-setuidgid abc /usr/bin/dbus-daemon --system
+  s6-setuidgid messagebus /usr/bin/dbus-daemon --system
