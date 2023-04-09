@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-alpine:3.17
+FROM ghcr.io/linuxserver/baseimage-alpine:edge
 
 # set version label
 ARG BUILD_DATE
@@ -8,20 +8,24 @@ ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="sweisgerber"
 
-RUN \
-  echo "**** install runtime packages ****" \
+RUN set -ex \
+  echo "**** setup apk testing mirror ****" \
+  && echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+  && cat /etc/apk/repositories \
+  && echo "**** install runtime packages ****" \
   && apk add --no-cache --upgrade \
-    snapcast --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
-  && apk add --no-cache --upgrade \
-    librespot --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing \
-    shairport-sync  --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing \
-  && apk add --no-cache --upgrade \
-    alsa-utils
+  && apk add --no-cache -U --upgrade \
+    alsa-utils \
+    librespot@testing \
+    shairport-sync@testing \
+    snapcast \
+  && echo "**** cleanup ****" \
+  && rm -rf \
+    /tmp/*
+
 # apk add alsa-utils alsa-lib alsaconf alsa-ucm-conf
 # environment settings
 ENV \
-EDITOR="nano" \
-HOME="/config" \
 START_SNAPCLIENT=false \
 SNAPCLIENT_OPTS="" \
 SNAPSERVER_OPTS=""
