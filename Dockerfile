@@ -1,5 +1,3 @@
-# syntax=docker/dockerfile:1
-
 FROM ghcr.io/linuxserver/baseimage-alpine:edge
 
 # set version label
@@ -13,7 +11,6 @@ RUN set -ex \
   && echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
   && cat /etc/apk/repositories \
   && echo "**** install runtime packages ****" \
-  && apk add --no-cache --upgrade \
   && apk add --no-cache -U --upgrade \
     alsa-utils \
     librespot@testing \
