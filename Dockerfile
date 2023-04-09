@@ -16,10 +16,7 @@ RUN \
     librespot --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing \
     shairport-sync  --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing \
   && apk add --no-cache --upgrade \
-    alsa-utils \
-    avahi \
-    avahi-compat-libdns_sd \
-    dbus
+    alsa-utils
 # apk add alsa-utils alsa-lib alsaconf alsa-ucm-conf
 # environment settings
 ENV \
