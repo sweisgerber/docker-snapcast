@@ -14,3 +14,9 @@ lsiown -R abc:abc \
     /config \
     /data \
     /audio
+
+if [ -n ${HOST_AUDIO_GROUP+x} ]; then
+  echo "Add HOST_AUDIO_GROUP: $HOST_AUDIO_GROUP"
+  addgroup host-audio -g $HOST_AUDIO_GROUP
+  addgroup abc host-audio
+fi
