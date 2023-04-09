@@ -1,5 +1,0 @@
-#!/usr/bin/with-contenv bash
-
-exec \
-  s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z localhost 5353" \
-    s6-setuidgid root /usr/sbin/avahi-daemon --no-chroot

@@ -1,9 +1,9 @@
 #!/usr/bin/with-contenv bash
 
 if [ "$START_SNAPCLIENT" = 'true' ]; then
-#  exec s6-setuidgid abc /usr/bin/snapclient "$SNAPCLIENT_OPTS"
+
   exec \
-    s6-setuidgid abc /usr/bin/snapclient --host 192.168.178.82 --soundcard 13
+    s6-setuidgid abc /usr/bin/snapclient $SNAPCLIENT_OPTS
 else
   exec \
     s6-setuidgid abc echo "Not starting snapclient. Set 'START_SNAPCLIENT=true' to start it."
