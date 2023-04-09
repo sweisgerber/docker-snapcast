@@ -14,12 +14,18 @@ RUN \
     snapcast --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
   && apk add --no-cache --upgrade \
     librespot --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing \
-    shairport-sync  --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing
-
+    shairport-sync  --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing \
+  && apk add --no-cache --upgrade \
+    alsa-utils \
+    avahi \
+    avahi-compat-libdns_sd \
+    dbus
+# apk add alsa-utils alsa-lib alsaconf alsa-ucm-conf
 # environment settings
-ENV BEETSDIR="/config" \
+ENV \
 EDITOR="nano" \
 HOME="/config" \
+START_SNAPCLIENT=false \
 SNAPCLIENT_OPTS="" \
 SNAPSERVER_OPTS=""
 

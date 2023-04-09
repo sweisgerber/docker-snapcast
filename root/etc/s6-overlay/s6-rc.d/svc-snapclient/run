@@ -1,5 +1,10 @@
 #!/usr/bin/with-contenv bash
 
-exec \
-    s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z localhost 1704" \
-    s6-setuidgid abc /usr/bin/snapclient $SNAPCLIENT_OPTS
+if [ "$START_SNAPCLIENT" = 'true' ]; then
+#  exec s6-setuidgid abc /usr/bin/snapclient "$SNAPCLIENT_OPTS"
+  exec \
+    s6-setuidgid abc /usr/bin/snapclient --host 192.168.178.82 --soundcard 13
+else
+  exec \
+    s6-setuidgid abc echo "Not starting snapclient. Set 'START_SNAPCLIENT=true' to start it."
+fi

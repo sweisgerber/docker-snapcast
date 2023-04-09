@@ -2,4 +2,4 @@
 
 exec \
     s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z localhost 1780" \
-    s6-setuidgid abc /usr/bin/snapserver --config /config/snapserver.conf $SNAPSERVER_OPTS
+      s6-setuidgid abc /usr/bin/snapserver --config /config/snapserver.conf $SNAPSERVER_OPTS
