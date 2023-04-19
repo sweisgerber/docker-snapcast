@@ -3,7 +3,7 @@ name: ci
 on:
   push:
     branches:
-      - "main"
+      - main
 env:
   IMAGE_NAME: snapcast
 jobs:
@@ -35,6 +35,9 @@ jobs:
           images: |
             sweisgerber/snapcast
             ghcr.io/sweisgerber/snapcast
+          tags: |
+            # set latest tag for default branch
+            type=raw,value=latest,enable={{is_default_branch}}
       - name: Build and push Docker images
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
