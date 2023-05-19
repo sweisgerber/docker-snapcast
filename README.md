@@ -1,8 +1,11 @@
 # Snapcast (Docker Image)
 
-> Based on [linuxserver/docker-baseimage-alpine](https://github.com/linuxserver/docker-baseimage-alpine) & [snapcast](https://github.com/badaix/snapcast)
+Snapcast Multiroom audio docker image.
 
-Should get usaed in conjunction with a player, that plays to a FIFO, like:
+> Based on [linuxserver/docker-baseimage-alpine](https://github.com/linuxserver/docker-baseimage-alpine) & [snapcast](https://github.com/badaix/snapcast).
+> Also available at [DockerHub](https://hub.docker.com/r/sweisgerber/snapcast)
+
+Should get used in conjunction with a player, that plays to a FIFO, like:
 
 - https://github.com/sweisgerber/docker-mopidy
 - [or any other player](https://github.com/badaix/snapcast#setup-of-audio-playersserver).
