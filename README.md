@@ -21,10 +21,10 @@ Should get used in conjunction with a player, that plays to a FIFO, like:
 - librespot (for functioning as spotify target)
 - shairport-sync (for functioning as airplay target)
 - FIFO usage to stream the audio from players to the network
-- Uses s6-overlay from base image
-- small footprint
-
-for functioning as spotify & airplay target.
+- Based on [linuxserver/docker-baseimage-alpine](https://github.com/linuxserver/docker-baseimage-alpine)
+    - ... which allows use of [linuxserver/docker-mods](https://github.com/linuxserver/docker-mods/tree/universal-package-install) to add more pip & OS packages
+    - Uses s6-overlay from base image
+    - small footprint
 
 ## docker-compose
 
