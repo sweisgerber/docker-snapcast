@@ -28,7 +28,7 @@ for functioning as spotify & airplay target.
 
 ## docker-compose
 
-I strongly advice to use docker-compose, as using a docker commandline is quite annoying with a comlex setup.
+I strongly advice to use docker-compose, as using a docker commandline is quite annoying with a complex setup.
 An example can get found [in the repository](./docker-compose.example.yml).
 
 ```yaml
