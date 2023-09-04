@@ -3,7 +3,7 @@ FROM ghcr.io/linuxserver/baseimage-alpine:edge
 # set version label
 ARG BUILD_DATE
 ARG VERSION
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL build_version="version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="sweisgerber"
 
 RUN set -ex \
