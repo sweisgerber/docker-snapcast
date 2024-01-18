@@ -1,6 +1,8 @@
-name: ci
+name: Build and push docker image
 
 on:
+  schedule:
+    - cron: "0 3 * * *"
   push:
     branches:
       - main
