@@ -11,8 +11,4 @@ if [ "$START_SNAPCLIENT" = 'true' ]; then
   fi
   exec \
     s6-setuidgid $PUID:$SNAPCLIENT_PROCESS_PORT /usr/bin/snapclient $SNAPCLIENT_OPTS
-
-else
-  exec \
-    s6-setuidgid abc echo "Not starting snapclient. Set 'START_SNAPCLIENT=true' to start it."
 fi

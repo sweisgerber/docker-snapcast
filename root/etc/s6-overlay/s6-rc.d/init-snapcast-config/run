@@ -15,8 +15,12 @@ lsiown -R abc:abc \
     /data \
     /audio
 
-if [ -n ${HOST_AUDIO_GROUP+x} ]; then
-  echo "Add HOST_AUDIO_GROUP: $HOST_AUDIO_GROUP"
-  addgroup host-audio -g $HOST_AUDIO_GROUP
-  addgroup abc host-audio
+if [ "$START_SNAPCLIENT" = 'true' ]; then
+  if [ -n ${HOST_AUDIO_GROUP+x} ]; then
+    echo "Add HOST_AUDIO_GROUP: '$HOST_AUDIO_GROUP'"
+    addgroup host-audio -g $HOST_AUDIO_GROUP
+    addgroup abc host-audio
+  fi
+else
+  echo "Not starting snapclient. Set 'START_SNAPCLIENT=true' to start it."
 fi
