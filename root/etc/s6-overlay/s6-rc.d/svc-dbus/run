@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bash
+
+echo "Starting dbus"
+mkdir -p /var/run/dbus
+exec s6-notifyoncheck dbus-daemon --system --nofork --nopidfile

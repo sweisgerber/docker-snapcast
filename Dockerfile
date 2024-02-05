@@ -13,6 +13,7 @@ RUN set -ex \
   && echo "**** install runtime packages ****" \
   && apk add --no-cache -U --upgrade \
     alsa-utils \
+    dbus \
     librespot@testing \
     shairport-sync@testing \
     snapcast \
