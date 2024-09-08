@@ -30,6 +30,7 @@ Should get used in conjunction with a player, that plays to a FIFO, like:
 
 I strongly advice to use docker-compose, as using a docker commandline is quite annoying with a complex setup.
 An example can get found [in the repository](./docker-compose.example.yml).
+A more complex example together with mopidy can get found at [mopiroom](https://github.com/sweisgerber/mopiroom/blob/main/docker-compose.yml).
 
 ```yaml
 version: "3"
