@@ -1,6 +1,6 @@
 # Snapcast (Docker Image)
 
-Snapcast Multiroom audio docker image.
+Snapcast Multiroom audio docker image w/ Snapweb files.
 
 > Based on [linuxserver/docker-baseimage-alpine](https://github.com/linuxserver/docker-baseimage-alpine) & [snapcast](https://github.com/badaix/snapcast).
 > Also available at [DockerHub](https://hub.docker.com/r/sweisgerber/snapcast)
