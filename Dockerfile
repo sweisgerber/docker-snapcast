@@ -16,6 +16,7 @@ RUN set -ex \
     librespot@testing \
     shairport-sync@testing \
     snapcast \
+    snapweb@testing \
   && echo "**** cleanup ****" \
   && rm -rf \
     /tmp/*
