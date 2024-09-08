@@ -12,7 +12,7 @@ Should get used in conjunction with a player, that plays to a FIFO, like:
 
 ## Features Include:
 
-- SnapServer w/ [sane defaults](./root/defaults/snapserver.conf)
+- Snapserver w/ [sane defaults](./root/defaults/snapserver.conf)
 - Snapclient (optional, needs mounting of host audio devices into docker)
     - I prefer using the snapclient as [host distribution package](https://github.com/badaix/snapcast/tree/develop#install-linux-packages-recommended-for-beginners).
 - [snapweb](https://github.com/badaix/snapweb) management interface & browser audio playback
