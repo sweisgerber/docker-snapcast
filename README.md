@@ -1,5 +1,10 @@
 # Snapcast (Docker Image)
 
+> [!NOTE]  
+> The Snapcast version is now available as docker image tag: e.g. `v0.31`.
+> if you want to use the version based on the git tag use `tag-<TAG>` 
+
+
 Snapcast Multiroom audio docker image w/ Snapweb files.
 
 > Based on [linuxserver/docker-baseimage-alpine](https://github.com/linuxserver/docker-baseimage-alpine) & [snapcast](https://github.com/badaix/snapcast).

@@ -51,7 +51,7 @@ jobs:
             type=schedule
             type=raw,value=latest,enable={{is_default_branch}}
             type=raw,value=v${{ env.SNAPCAST_VERSION }},enable={{is_default_branch}}
-            type=semver,pattern=v{{version}},prefix=tag-
+            type=semver,pattern={{raw}},prefix=tag-
             # type=ref,event=branch
             # type=ref,event=tag
             # type=ref,event=pr
