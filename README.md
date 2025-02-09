@@ -2,7 +2,7 @@
 
 > [!NOTE]  
 > The Snapcast version is now available as docker image tag: e.g. `v0.31`.
-> if you want to use the version based on the git tag use `tag-<TAG>` 
+> If you want to use the version based on the git tag use `tag-<TAG>` 
 
 
 Snapcast Multiroom audio docker image w/ Snapweb files.
