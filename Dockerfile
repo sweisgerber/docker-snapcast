@@ -3,6 +3,9 @@ FROM ghcr.io/linuxserver/baseimage-alpine:edge
 # set version label
 ARG BUILD_DATE
 ARG VERSION
+ARG SNAPCAST_RELEASE
+ARG LIBRESPOT_RELEASE
+
 LABEL build_version="version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="sweisgerber"
 
@@ -13,9 +16,9 @@ RUN set -ex \
   && echo "**** install runtime packages ****" \
   && apk add --no-cache -U --upgrade \
     alsa-utils \
-    librespot@testing \
+    librespot@testing=${LIBRESPOT_RELEASE} \
     shairport-sync@testing \
-    snapcast \
+    snapcast=${SNAPCAST_RELEASE} \
     snapweb@testing \
   && echo "**** cleanup ****" \
   && rm -rf \
