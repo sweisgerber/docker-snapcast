@@ -16,9 +16,9 @@ RUN set -ex \
   && echo "**** install runtime packages ****" \
   && apk add --no-cache -U --upgrade \
     alsa-utils \
-    librespot@testing=${LIBRESPOT_RELEASE} \
+    librespot@testing=~${LIBRESPOT_RELEASE} \
     shairport-sync@testing \
-    snapcast=${SNAPCAST_RELEASE} \
+    snapcast=~${SNAPCAST_RELEASE} \
     snapweb@testing \
   && echo "**** cleanup ****" \
   && rm -rf \
