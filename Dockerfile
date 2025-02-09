@@ -11,7 +11,7 @@ LABEL maintainer="sweisgerber"
 
 RUN set -ex \
   echo "**** setup apk testing mirror ****" \
-  && echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+  && echo "@testing https://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories \
   && cat /etc/apk/repositories \
   && echo "**** install runtime packages ****" \
   && apk add --no-cache -U --upgrade \
