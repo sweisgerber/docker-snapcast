@@ -64,6 +64,6 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            SNAPCAST_VERSION=${{ SNAPCAST_VERSION }}
-            LIBRESPOT_VERSION=${{ LIBRESPOT_VERSION }}
-            VERSION=snapcast-${{ SNAPCAST_VERSION }}-librespot-${{ LIBRESPOT_VERSION }}
+            SNAPCAST_VERSION=${{ env.SNAPCAST_VERSION }}
+            LIBRESPOT_VERSION=${{ env.LIBRESPOT_VERSION }}
+            VERSION=snapcast-${{ env.SNAPCAST_VERSION }}-librespot-${{ env.LIBRESPOT_VERSION }}
