@@ -16,6 +16,7 @@ RUN set -ex \
   && echo "**** install runtime packages ****" \
   && apk add --no-cache -U --upgrade \
     alsa-utils \
+    dbus \
     librespot@testing=~${LIBRESPOT_RELEASE} \
     shairport-sync@testing \
     snapcast=~${SNAPCAST_RELEASE} \
@@ -28,6 +29,7 @@ RUN set -ex \
 # environment settings
 ENV \
 START_SNAPCLIENT=false \
+START_AIRPLAY=false \
 SNAPCLIENT_OPTS="" \
 SNAPSERVER_OPTS=""
 

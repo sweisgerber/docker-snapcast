@@ -53,6 +53,7 @@ services:
       # - SNAPCLIENT_OPTS=--host snapcast --soundcard <ID>
       #   => Don't use quotes for SNAPCLIENT_OPTS="" !
       # - HOST_AUDIO_GROUP=<AUDIO-GID> # set to GID of host audio group
+      - START_AIRPLAY=false # set to 'true' to enable Airplay support via Shairport-sync
     restart: "unless-stopped"
     ports:
       - 1704:1704
