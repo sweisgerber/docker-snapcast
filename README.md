@@ -38,7 +38,6 @@ An example can get found [in the repository](./docker-compose.example.yml).
 A more complex example together with mopidy can get found at [mopiroom](https://github.com/sweisgerber/mopiroom/blob/main/docker-compose.yml).
 
 ```yaml
-version: "3"
 services:
   snapcast:
     image: docker.io/sweisgerber/snapcast:latest
