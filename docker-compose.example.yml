@@ -1,4 +1,3 @@
-version: "3"
 services:
   snapcast:
     image: docker.io/sweisgerber/snapcast:latest
@@ -15,10 +14,12 @@ services:
       # - HOST_AUDIO_GROUP=<AUDIO-GID> # set to GID of host audio group
       - START_AIRPLAY=false # set to 'true' to enable Airplay support via Shairport-sync
     restart: "unless-stopped"
-    ports:
-      - 1704:1704 # port for the actual audio streaming
-      - 1705:1705 # port for TCP Json RPC
-      - 1780:1780 # port for the SnapWeb Webinterface
+    network_mode: host
+# in network mode host port mapping is not required
+#    ports:
+#      - 1704:1704 # port for the actual audio streaming
+#      - 1705:1705 # port for TCP Json RPC
+#      - 1780:1780 # port for the SnapWeb Webinterface
     # devices:
       # - /dev/snd:/dev/snd # optional, only if you want to use snapclient
     volumes:
@@ -26,3 +27,6 @@ services:
       - /<path>/<to>/<snapcast>/data/:/data/
       # /audio should get used to place FIFOs for audio playback from mpd/mopidy/host/etc
       - /<path>/<to>/audio-fifos/:/audio/
+      # Map to host avahi/dbus service to allow spotify and airplay advertising
+      - /var/run/dbus:/var/run/dbus
+      - /var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket

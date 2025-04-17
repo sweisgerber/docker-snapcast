@@ -15,6 +15,7 @@ RUN set -ex \
   && cat /etc/apk/repositories \
   && echo "**** install runtime packages ****" \
   && apk add --no-cache -U --upgrade \
+    shadow \
     alsa-utils \
     dbus \
     librespot@testing=~${LIBRESPOT_RELEASE} \
@@ -24,6 +25,10 @@ RUN set -ex \
   && echo "**** cleanup ****" \
   && rm -rf \
     /tmp/*
+
+# Add group and user otherwise start will fail
+RUN addgroup shairport-sync && \
+    useradd -g shairport-sync -s /sbin/nologin shairport-sync
 
 # apk add alsa-utils alsa-lib alsaconf alsa-ucm-conf
 # environment settings

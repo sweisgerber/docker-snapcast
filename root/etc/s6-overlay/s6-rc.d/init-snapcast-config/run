@@ -24,9 +24,3 @@ if [ "$START_SNAPCLIENT" = 'true' ]; then
 else
   echo "Not starting snapclient. Set 'START_SNAPCLIENT=true' to start it."
 fi
-
-if [ "$START_AIRPLAY" = 'true' ]; then
-  echo "Starting DBUS to enable Airplay"
-else
-  echo "Not starting DBUS. Set 'START_AIRPLAY=true' to start it and enable Airplay support."
-fi
