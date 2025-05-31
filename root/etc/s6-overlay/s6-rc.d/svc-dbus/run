@@ -1,5 +1,7 @@
 #!/usr/bin/with-contenv bash
 
-echo "Starting dbus"
-mkdir -p /var/run/dbus
-exec s6-notifyoncheck dbus-daemon --system --nofork --nopidfile
+if [ "$START_AIRPLAY" = 'true' ]; then
+  mkdir -p /run/dbus
+  exec s6-notifyoncheck -d -n 300 -w 1000 -c "dbus-send --system / org.freedesktop.DBus.Peer.Ping" \
+    dbus-daemon --system --nofork --nopidfile
+fi

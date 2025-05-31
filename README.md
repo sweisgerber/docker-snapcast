@@ -1,6 +1,11 @@
 # Snapcast (Docker Image)
 
-Snapcast Multiroom audio docker image.
+> [!NOTE]  
+> The Snapcast version is now available as docker image tag: e.g. `v0.31`.
+> If you want to use the version based on the git tag use `tag-<TAG>` 
+
+
+Snapcast Multiroom audio docker image w/ Snapweb files.
 
 > Based on [linuxserver/docker-baseimage-alpine](https://github.com/linuxserver/docker-baseimage-alpine) & [snapcast](https://github.com/badaix/snapcast).
 > Also available at [DockerHub](https://hub.docker.com/r/sweisgerber/snapcast)
@@ -12,7 +17,7 @@ Should get used in conjunction with a player, that plays to a FIFO, like:
 
 ## Features Include:
 
-- SnapServer w/ [sane defaults](./root/defaults/snapserver.conf)
+- Snapserver w/ [sane defaults](./root/defaults/snapserver.conf)
 - Snapclient (optional, needs mounting of host audio devices into docker)
     - I prefer using the snapclient as [host distribution package](https://github.com/badaix/snapcast/tree/develop#install-linux-packages-recommended-for-beginners).
 - [snapweb](https://github.com/badaix/snapweb) management interface & browser audio playback
@@ -30,6 +35,7 @@ Should get used in conjunction with a player, that plays to a FIFO, like:
 
 I strongly advice to use docker-compose, as using a docker commandline is quite annoying with a complex setup.
 An example can get found [in the repository](./docker-compose.example.yml).
+A more complex example together with mopidy can get found at [mopiroom](https://github.com/sweisgerber/mopiroom/blob/main/docker-compose.yml).
 
 ```yaml
 version: "3"
@@ -47,6 +53,7 @@ services:
       # - SNAPCLIENT_OPTS=--host snapcast --soundcard <ID>
       #   => Don't use quotes for SNAPCLIENT_OPTS="" !
       # - HOST_AUDIO_GROUP=<AUDIO-GID> # set to GID of host audio group
+      - START_AIRPLAY=false # set to 'true' to enable Airplay support via Shairport-sync
     restart: "unless-stopped"
     ports:
       - 1704:1704
