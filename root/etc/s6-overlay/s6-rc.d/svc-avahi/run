@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bash
 
-echo "Starting avahi"
-exec s6-notifyoncheck avahi-daemon --no-chroot
+if [ "$START_AVAHI" = 'true' ]; then
+  exec s6-notifyoncheck avahi-daemon --no-chroot
+fi
