@@ -1,8 +1,8 @@
 # Snapcast (Docker Image)
 
-> [!NOTE]  
+> [!NOTE]
 > The Snapcast version is now available as docker image tag: e.g. `v0.31`.
-> If you want to use the version based on the git tag use `tag-<TAG>` 
+> If you want to use the version based on the git tag use `tag-<TAG>`
 
 
 Snapcast Multiroom audio docker image w/ Snapweb files.
@@ -84,3 +84,11 @@ To enable snapclient:
     - probably you will need to specify soundcard `--soundcard`, find out with `snapclient --list`
 
 In any case, give [the official documentation a read](https://github.com/badaix/snapcast#client)
+
+# Development
+
+Local manual build example:
+
+```shell
+docker buildx build ./ -t local/snapcast:latest --build-arg SNAPCAST_RELEASE=0.32.2 --build-arg LIBRESPOT_RELEASE=0.6
+```
