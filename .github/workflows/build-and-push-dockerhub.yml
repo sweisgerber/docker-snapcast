@@ -10,7 +10,7 @@ env:
   IMAGE_NAME: snapcast
   NAMESPACE: sweisgerber
   SNAPCAST_VERSION: 0.34.0
-  LIBRESPOT_VERSION: 0.7.1
+  LIBRESPOT_VERSION: 0.8.0
 jobs:
   docker:
     runs-on: ubuntu-latest
