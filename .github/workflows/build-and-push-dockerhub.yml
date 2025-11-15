@@ -9,7 +9,7 @@ on:
 env:
   IMAGE_NAME: snapcast
   NAMESPACE: sweisgerber
-  SNAPCAST_VERSION: 0.32.3
+  SNAPCAST_VERSION: 0.34.0
   LIBRESPOT_VERSION: 0.7.1
 jobs:
   docker:
