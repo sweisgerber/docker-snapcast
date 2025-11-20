@@ -90,5 +90,5 @@ In any case, give [the official documentation a read](https://github.com/badaix/
 Local manual build example:
 
 ```shell
-docker buildx build ./ -t local/snapcast:latest --build-arg SNAPCAST_RELEASE=0.32.2 --build-arg LIBRESPOT_RELEASE=0.6
+docker buildx build ./ -t local/snapcast:latest --build-arg SNAPCAST_RELEASE=0.34.0 --build-arg LIBRESPOT_RELEASE=0.8.0
 ```
