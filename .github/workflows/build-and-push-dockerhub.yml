@@ -9,8 +9,8 @@ on:
 env:
   IMAGE_NAME: snapcast
   NAMESPACE: sweisgerber
-  SNAPCAST_VERSION: 0.34.0
-  LIBRESPOT_VERSION: 0.8.0
+  SNAPCAST_VERSION: 0.35.0 # <https://pkgs.alpinelinux.org/package/edge/community/x86/snapcast-server>
+  LIBRESPOT_VERSION: 0.8.0 # <https://pkgs.alpinelinux.org/package/edge/testing/x86_64/librespot>
 jobs:
   docker:
     runs-on: ubuntu-latest
